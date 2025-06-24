@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phani Kota - Azure Data Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Base font and background styling */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Styling for content sections */
+        .section {
+            padding: 6rem 1rem;
+        }
+        @media (min-width: 768px) {
+            .section {
+                padding: 8rem 2rem;
+            }
+        }
+        /* Frosted glass effect for cards */
+        .glass-effect {
+            background: rgba(30, 41, 59, 0.5); /* bg-slate-800 with opacity */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Header style change on scroll */
+        #header.scrolled {
+            background-color: rgba(15, 23, 42, 0.85); /* bg-slate-900 with more opacity */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-300">
+
+    <!-- Header Navigation -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo/Name -->
+                <a href="#home" class="text-2xl font-bold text-white tracking-wider">
+                    Phani Kota
+                </a>
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300 font-medium">About</a>
+                    <a href="#skills" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300 font-medium">Skills</a>
+                    <a href="#projects" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300 font-medium">Projects</a>
+                    <a href="#contact" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300 font-medium">Contact</a>
+                </nav>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <i id="menu-icon" data-lucide="menu" class="w-7 h-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800/95 backdrop-blur-sm">
+            <a href="#about" class="mobile-link block py-3 px-6 text-sm hover:bg-slate-700">About</a>
+            <a href="#skills" class="mobile-link block py-3 px-6 text-sm hover:bg-slate-700">Skills</a>
+            <a href="#projects" class="mobile-link block py-3 px-6 text-sm hover:bg-slate-700">Projects</a>
+            <a href="#contact" class="mobile-link block py-3 px-6 text-sm hover:bg-slate-700">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
+             <div class="absolute inset-0 bg-slate-900 opacity-60"></div>
+             <div class="absolute top-0 left-0 w-full h-full bg-cover bg-center bg-fixed" style="background-image: url('https://placehold.co/1920x1080/020617/0f172a?text=Data+Streams');" 
+                  onerror="this.onerror=null; this.style.backgroundColor='#020617';"></div>
+            <div class="relative z-10 px-4">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4">
+                    Phani Kota
+                </h1>
+                <p class="text-xl md:text-2xl text-cyan-400 font-semibold mb-8">
+                    Azure Data Engineer
+                </p>
+                <a href="#projects" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105">
+                    View My Work
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section bg-slate-800">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-white">About Me</h2>
+                    <div class="w-24 h-1 bg-cyan-500 mx-auto mt-4 rounded"></div>
+                </div>
+                <div class="max-w-4xl mx-auto text-center text-lg text-slate-300 space-y-4">
+                    <p>
+                        Hello! I'm Phani Kota, a passionate and results-driven Azure Data Engineer with a proven track record of designing, building, and maintaining scalable and robust data pipelines. My expertise lies in leveraging the Microsoft Azure data stack to transform raw data into actionable insights.
+                    </p>
+                    <p>
+                        I thrive on solving complex data challenges and am dedicated to building efficient, reliable data solutions that drive business value. From data ingestion and transformation to storage and visualization, I manage the entire data lifecycle to empower data-driven decision-making.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-white">Technical Skills</h2>
+                    <div class="w-24 h-1 bg-cyan-500 mx-auto mt-4 rounded"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Category: Cloud Platforms -->
+                    <div class="glass-effect p-8 rounded-xl shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="flex items-center mb-4">
+                             <i data-lucide="cloud" class="w-8 h-8 text-cyan-400 mr-4"></i>
+                            <h3 class="text-2xl font-semibold text-white">Cloud (Azure)</h3>
+                        </div>
+                        <ul class="space-y-3 text-slate-300">
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 mr-2"></i>Azure Data Factory</li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 mr-2"></i>Azure Synapse Analytics</li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 mr-2"></i>Azure Databricks</li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 mr-2"></i>Azure Blob/Data Lake Storage</li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 mr-2"></i>Azure SQL Database</li>
+                        </ul>
+                    </div>
+
+                    <!-- Category: Data Technologies -->
+                    <div class="glass-effect p-8 rounded-xl shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 transform hover:-translate-y-2">
+                         <div class="flex items-center mb-4">
+                             <i data-lucide="database" class="w-8 h-8 text-cyan-400 mr-4"></i>
+                            <h3 class="text-2xl font-semibold text-white">Data Technologies</h3>
+                        </div>
+                        <ul class="space-y-3 text-slate-300">
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 mr-2"></i>Apache Spark</li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 mr-2"></i>SQL & T-SQL</li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 mr-2"></i>Data Warehousing</li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 mr-2"></i>ETL/ELT Processes</li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 mr-2"></i>Data Modeling</li>
+                        </ul>
+                    </div>
+
+                    <!-- Category: Programming & Tools -->
+                    <div class="glass-effect p-8 rounded-xl shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 transform hover:-translate-y-2">
+                         <div class="flex items-center mb-4">
+                             <i data-lucide="code-2" class="w-8 h-8 text-cyan-400 mr-4"></i>
+                            <h3 class="text-2xl font-semibold text-white">Programming & Tools</h3>
+                        </div>
+                        <ul class="space-y-3 text-slate-300">
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 mr-2"></i>Python (Pandas, PySpark)</li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 mr-2"></i>PowerShell</li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 mr-2"></i>Git & GitHub</li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 mr-2"></i>CI/CD (Azure DevOps)</li>
+                            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-400 mr-2"></i>Power BI</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section bg-slate-800">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-white">Projects</h2>
+                    <div class="w-24 h-1 bg-cyan-500 mx-auto mt-4 rounded"></div>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-400">Here are some of the projects I've worked on. (You can replace these with your actual projects)</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="glass-effect rounded-xl overflow-hidden group">
+                        <img src="https://placehold.co/600x400/1e293b/38bdf8?text=Project+1" alt="Project 1" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Real-Time Analytics Pipeline</h3>
+                            <p class="text-slate-400 mb-4">Developed an end-to-end real-time data ingestion and processing pipeline using Azure Event Hubs, Stream Analytics, and Power BI.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">Azure</span>
+                                <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">Data Factory</span>
+                                <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">Power BI</span>
+                            </div>
+                            <a href="#" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-semibold">
+                                View Details <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="glass-effect rounded-xl overflow-hidden group">
+                        <img src="https://placehold.co/600x400/1e293b/38bdf8?text=Project+2" alt="Project 2" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Cloud Data Warehouse Modernization</h3>
+                            <p class="text-slate-400 mb-4">Migrated on-premise SQL Server data warehouse to Azure Synapse Analytics, improving query performance by 200%.</p>
+                             <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">Synapse</span>
+                                <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">ADLS Gen2</span>
+                                <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">Databricks</span>
+                            </div>
+                            <a href="#" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-semibold">
+                                View Details <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="glass-effect rounded-xl overflow-hidden group">
+                        <img src="https://placehold.co/600x400/1e293b/38bdf8?text=Project+3" alt="Project 3" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Automated ETL Framework</h3>
+                            <p class="text-slate-400 mb-4">Built a metadata-driven ETL framework in Azure Data Factory to automate data ingestion from 10+ diverse sources.</p>
+                             <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">Python</span>
+                                <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">SQL</span>
+                                <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">DevOps</span>
+                            </div>
+                            <a href="#" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-semibold">
+                                View Details <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-white">Get In Touch</h2>
+                    <div class="w-24 h-1 bg-cyan-500 mx-auto mt-4 rounded"></div>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-400">I'm currently open to new opportunities. Feel free to reach out!</p>
+                </div>
+                <div class="max-w-2xl mx-auto">
+                    <form action="#" method="POST" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <input type="text" placeholder="Your Name" class="w-full bg-slate-800 border border-slate-600 rounded-lg p-3 text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none transition">
+                            <input type="email" placeholder="Your Email" class="w-full bg-slate-800 border border-slate-600 rounded-lg p-3 text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none transition">
+                        </div>
+                        <input type="text" placeholder="Subject" class="w-full bg-slate-800 border border-slate-600 rounded-lg p-3 text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none transition">
+                        <textarea placeholder="Your Message" rows="5" class="w-full bg-slate-800 border border-slate-600 rounded-lg p-3 text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none transition"></textarea>
+                        <div class="text-center">
+                            <button type="submit" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 border-t border-slate-700">
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+                <p class="text-slate-400 mb-4 md:mb-0">&copy; 2024 Phani Kota. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-slate-400 hover:text-cyan-400 transition-colors">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-cyan-400 transition-colors">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-cyan-400 transition-colors">
+                        <i data-lucide="twitter" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.getElementById('header');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const mobileLinks = mobileMenu.querySelectorAll('.mobile-link');
+
+            // --- Header scroll effect ---
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // --- Mobile menu toggle ---
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                // Toggle icon between menu and x
+                if (mobileMenu.classList.contains('hidden')) {
+                    menuIcon.outerHTML = '<i id="menu-icon" data-lucide="menu" class="w-7 h-7"></i>';
+                } else {
+                    menuIcon.outerHTML = '<i id="menu-icon" data-lucide="x" class="w-7 h-7"></i>';
+                }
+                lucide.createIcons(); // Re-render the icon
+            });
+
+            // --- Close mobile menu when a link is clicked ---
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.outerHTML = '<i id="menu-icon" data-lucide="menu" class="w-7 h-7"></i>';
+                    lucide.createIcons();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
