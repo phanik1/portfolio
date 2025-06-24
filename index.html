@@ -390,17 +390,25 @@
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault(); // Prevent default form submission
+                    console.log("Form submission intercepted."); // For debugging
 
                     const formData = new FormData(contactForm);
-                    
-                    // Special handling for checkboxes
-                    const interests = [];
-                    formData.getAll('interest[]').forEach(item => interests.push(item));
-                    const formObject = Object.fromEntries(formData.entries());
-                    formObject.interest = interests; // Add interests array to the object
-                    delete formObject['interest[]']; // Clean up the old entry
+                    const formObject = {};
+                    formData.forEach((value, key) => {
+                        // This logic handles multiple checkboxes with the same name
+                        if (key.endsWith('[]')) {
+                            const cleanKey = key.slice(0, -2); // Creates 'interest' from 'interest[]'
+                            if (!formObject[cleanKey]) {
+                                formObject[cleanKey] = [];
+                            }
+                            formObject[cleanKey].push(value);
+                        } else {
+                            formObject[key] = value;
+                        }
+                    });
                     
                     const json = JSON.stringify(formObject);
+                    console.log("Submitting JSON:", json); // For debugging
 
                     // Update button to show "Sending..."
                     submitButton.disabled = true;
