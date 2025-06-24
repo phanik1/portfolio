@@ -38,6 +38,30 @@
             -webkit-backdrop-filter: blur(10px);
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
+        /* Custom styling for form checkboxes */
+        input[type="checkbox"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: #334155; /* bg-slate-700 */
+            border-color: #475569; /* border-slate-600 */
+            border-width: 1px;
+            padding: 0.5rem;
+            border-radius: 4px;
+            display: inline-block;
+            position: relative;
+        }
+        input[type="checkbox"]:checked {
+            background-color: #0891b2; /* bg-cyan-600 */
+            border-color: #0e7490; /* border-cyan-700 */
+        }
+        input[type="checkbox"]:checked::after {
+            content: '✔';
+            position: absolute;
+            color: white;
+            top: -2px;
+            left: 2px;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-300">
@@ -107,6 +131,14 @@
                     <p>
                         I thrive on solving complex data challenges and am dedicated to building efficient, reliable data solutions that drive business value. From data ingestion and transformation to storage and visualization, I manage the entire data lifecycle to empower data-driven decision-making.
                     </p>
+                </div>
+                 <!-- Resume Download Button -->
+                <div class="mt-12 text-center">
+                    <!-- Make sure to add your resume file (e.g., Phani_Kota_Resume.pdf) to your project folder -->
+                    <a href="Phani_Kota_Resume.pdf" target="_blank" class="bg-transparent hover:bg-cyan-500 text-cyan-400 font-semibold hover:text-white py-3 px-8 border border-cyan-400 hover:border-transparent rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 inline-flex items-center">
+                        <i data-lucide="download" class="w-5 h-5 mr-3"></i>
+                        Download My Resume
+                    </a>
                 </div>
             </div>
         </section>
@@ -187,8 +219,9 @@
                                 <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">Data Factory</span>
                                 <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">Power BI</span>
                             </div>
-                            <a href="#" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-semibold">
-                                View Details <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                            <!-- Replace '#' with the link to your project repository or live demo -->
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-semibold">
+                                View on GitHub <i data-lucide="github" class="w-4 h-4 ml-2"></i>
                             </a>
                         </div>
                     </div>
@@ -203,8 +236,9 @@
                                 <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">ADLS Gen2</span>
                                 <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">Databricks</span>
                             </div>
-                            <a href="#" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-semibold">
-                                View Details <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                            <!-- Replace '#' with the link to your project repository or live demo -->
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-semibold">
+                                View on GitHub <i data-lucide="github" class="w-4 h-4 ml-2"></i>
                             </a>
                         </div>
                     </div>
@@ -219,8 +253,9 @@
                                 <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">SQL</span>
                                 <span class="bg-cyan-900 text-cyan-300 text-xs font-semibold px-2.5 py-1 rounded-full">DevOps</span>
                             </div>
-                            <a href="#" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-semibold">
-                                View Details <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                            <!-- Replace '#' with the link to your project repository or live demo -->
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-semibold">
+                                View on GitHub <i data-lucide="github" class="w-4 h-4 ml-2"></i>
                             </a>
                         </div>
                     </div>
@@ -237,18 +272,45 @@
                     <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-400">I'm currently open to new opportunities. Feel free to reach out!</p>
                 </div>
                 <div class="max-w-2xl mx-auto">
-                    <form action="https://formspree.io/f/xeokrvya" method="POST" class="space-y-6">
+                    <!-- This form now points to your live Formspree endpoint -->
+                    <form id="contact-form" action="https://formspree.io/f/xeokrvya" method="POST" class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input type="text" placeholder="Your Name" class="w-full bg-slate-800 border border-slate-600 rounded-lg p-3 text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none transition">
-                            <input type="email" placeholder="Your Email" class="w-full bg-slate-800 border border-slate-600 rounded-lg p-3 text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none transition">
+                            <input type="text" name="name" placeholder="Your Name" required class="w-full bg-slate-800 border border-slate-600 rounded-lg p-3 text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none transition">
+                            <input type="email" name="email" placeholder="Your Email" required class="w-full bg-slate-800 border border-slate-600 rounded-lg p-3 text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none transition">
                         </div>
-                        <input type="text" placeholder="Subject" class="w-full bg-slate-800 border border-slate-600 rounded-lg p-3 text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none transition">
-                        <textarea placeholder="Your Message" rows="5" class="w-full bg-slate-800 border border-slate-600 rounded-lg p-3 text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none transition"></textarea>
+                        <input type="text" name="subject" placeholder="Subject" required class="w-full bg-slate-800 border border-slate-600 rounded-lg p-3 text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none transition">
+                        
+                        <!-- Checkbox section -->
+                        <fieldset class="border border-slate-600 rounded-lg p-4">
+                            <legend class="px-2 text-slate-400 text-sm">I'm interested in...</legend>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 pt-2">
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="checkbox" name="interest[]" value="full-time">
+                                    <span class="text-slate-300">Full-time Opportunities</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="checkbox" name="interest[]" value="contract">
+                                    <span class="text-slate-300">Contract/Freelance Work</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="checkbox" name="interest[]" value="collaboration">
+                                    <span class="text-slate-300">Project Collaboration</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer">
+                                    <input type="checkbox" name="interest[]" value="other">
+                                    <span class="text-slate-300">Other</span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <textarea name="message" placeholder="Your Message" rows="5" required class="w-full bg-slate-800 border border-slate-600 rounded-lg p-3 text-white focus:ring-2 focus:ring-cyan-500 focus:outline-none transition"></textarea>
                         <div class="text-center">
-                            <button type="submit" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105">
+                            <button id="submit-button" type="submit" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105">
                                 Send Message
                             </button>
                         </div>
+                        <!-- Status message for form submission -->
+                        <div id="form-status" class="text-center mt-4 text-lg"></div>
                     </form>
                 </div>
             </div>
@@ -261,13 +323,16 @@
             <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
                 <p class="text-slate-400 mb-4 md:mb-0">&copy; 2024 Phani Kota. All rights reserved.</p>
                 <div class="flex space-x-6">
-                    <a href="#" class="text-slate-400 hover:text-cyan-400 transition-colors">
+                    <!-- Add your GitHub profile link here -->
+                    <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-cyan-400 transition-colors">
                         <i data-lucide="github" class="w-6 h-6"></i>
                     </a>
-                    <a href="#" class="text-slate-400 hover:text-cyan-400 transition-colors">
+                    <!-- Add your LinkedIn profile link here -->
+                    <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-cyan-400 transition-colors">
                         <i data-lucide="linkedin" class="w-6 h-6"></i>
                     </a>
-                    <a href="#" class="text-slate-400 hover:text-cyan-400 transition-colors">
+                    <!-- Add your Twitter profile link here -->
+                    <a href="https://twitter.com/your-handle" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-cyan-400 transition-colors">
                         <i data-lucide="twitter" class="w-6 h-6"></i>
                     </a>
                 </div>
@@ -286,6 +351,10 @@
             const mobileMenu = document.getElementById('mobile-menu');
             const menuIcon = document.getElementById('menu-icon');
             const mobileLinks = mobileMenu.querySelectorAll('.mobile-link');
+            const contactForm = document.getElementById('contact-form');
+            const formStatus = document.getElementById('form-status');
+            const submitButton = document.getElementById('submit-button');
+
 
             // --- Header scroll effect ---
             window.addEventListener('scroll', () => {
@@ -316,6 +385,65 @@
                     lucide.createIcons();
                 });
             });
+
+            // --- Contact Form Submission Handler ---
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Prevent default form submission
+
+                    const formData = new FormData(contactForm);
+                    
+                    // Special handling for checkboxes
+                    const interests = [];
+                    formData.getAll('interest[]').forEach(item => interests.push(item));
+                    const formObject = Object.fromEntries(formData.entries());
+                    formObject.interest = interests; // Add interests array to the object
+                    delete formObject['interest[]']; // Clean up the old entry
+                    
+                    const json = JSON.stringify(formObject);
+
+                    // Update button to show "Sending..."
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = "Sending...";
+                    formStatus.innerHTML = ""; // Clear previous status
+
+                    fetch(contactForm.action, {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: json
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // On success
+                            formStatus.innerHTML = "<span class='text-green-400'>Message sent successfully!</span>";
+                            contactForm.reset(); // Clear the form fields
+                        } else {
+                            // On error
+                            response.json().then(data => {
+                                if (Object.hasOwn(data, 'errors')) {
+                                    formStatus.innerHTML = `<span class='text-red-400'>Error: ${data["errors"].map(error => error["message"]).join(", ")}</span>`;
+                                } else {
+                                    formStatus.innerHTML = "<span class='text-red-400'>Oops! There was a problem submitting your form.</span>";
+                                }
+                            });
+                        }
+                    })
+                    .catch(error => {
+                        // On network error
+                        formStatus.innerHTML = "<span class='text-red-400'>Oops! There was a network error.</span>";
+                        console.error('Error:', error);
+                    })
+                    .finally(() => {
+                         // Re-enable button
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = "Send Message";
+                    });
+                });
+            }
+
         });
     </script>
 </body>
